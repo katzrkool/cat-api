@@ -1,8 +1,9 @@
 ## The CAT Api
+### Deployment to AWS using AWS CDK and Github Actions
 ___
 Author: Edvinas Bosas
 ___
-AWS CloudFormation using AWS CDK
+
 This creates a REST API with:
 * DynamoDB Table
 * 4 Lambda Functions
