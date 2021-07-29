@@ -8,7 +8,7 @@ This creates a REST API with:
 * DynamoDB Table
 * 4 Lambda Functions
 * 4 API Gateway Endpoints, each associated with a different Lambda function:
-    * POST/create
+    * POST /create
     * GET /list
     * PUT /update
     * DELETE /delete

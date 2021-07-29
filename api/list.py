@@ -16,7 +16,7 @@ def list_cat(event, context):
     table = dynamodb.Table(TABLE_NAME)
     if result and ids is None:
         cats = table.scan()
-        return return_response(200, table.scan()["Items"])
+        return return_response(200, cats["Items"])
     cats = []
     for id_ in ids:
         cat = table.get_item(Key={"id": id_})
