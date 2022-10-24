@@ -51,7 +51,9 @@ class CatApiStack(cdk.Stack):
         table.grant_read_write_data(delete)
 
         # Create an API Gateway with appropriate resources
-        api = aws_apigateway.RestApi(self, "CatApi", rest_api_name="CatApi", description="API for Cats")
+        api = aws_apigateway.RestApi(self, "CatApi", rest_api_name="CatApi", description="API for Cats", default_cors_preflight_options=aws_apigateway.CorsOptions(
+            allow_origins=['*']
+        ))
         create_cat = api.root.add_resource("create")
         list_cat = api.root.add_resource("list")
         update_cat = api.root.add_resource("update")
