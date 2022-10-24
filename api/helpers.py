@@ -11,14 +11,16 @@ def return_response(status_code, body):
             "data": body
         }, indent=4),
         "headers": {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*"
         }
     }
     return response
 
 def verify_headers(event, content_type="application/json"):
     # Some handlers require specific header types. Quickly check them with this
-    if not event["headers"]["Content-Type"] == content_type:
+    headers = {key.lower(): value for key, value in event['headers'].items()}
+    if not headers['content-type'] == content_type:
         return False
     return True
 
